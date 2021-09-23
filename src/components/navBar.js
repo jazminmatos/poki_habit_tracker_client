@@ -5,19 +5,19 @@ import React from 'react';
 const NavBar = () => {
     return (
         <>
-            <NavLink exact activeStyle={{color: 'blue'}} to='/'>
+            <NavLink exact activeStyle={{color: '#009FB7'}} to='/'>
                 Home
             </NavLink> |
 
-            <NavLink exact activeStyle={{color: 'blue'}} to='/about'>
+            <NavLink exact activeStyle={{color: '#009FB7'}} to='/about'>
                 About
             </NavLink> |
 
-            <NavLink exact activeStyle={{color: 'blue'}} to='/profile'>
+            <NavLink exact activeStyle={{color: '#009FB7'}} to='/profile'>
                 Profile
             </NavLink> |
 
-            <NavLink exact activeStyle={{color: 'blue'}} to='/store'>
+            <NavLink exact activeStyle={{color: '#009FB7'}} to='/store'>
                 Store
             </NavLink> |
         </>
