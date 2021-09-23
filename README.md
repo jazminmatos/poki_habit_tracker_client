@@ -17,7 +17,8 @@ Clone the following repos and follow instructions:
     - See all the servers that are running: ps -ef | grep postgres
     - Kill servers: brew services stop postgres
 - Frontend: [poki_habit_tracker_client](https://github.com/jazminmatos/drawing_client)
-  - Open index.html
+  - Run npm install
+  - Run npm start
 
 ### Contributer's Guide
 
