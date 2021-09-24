@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 
-import { createUser } from '../actions/userActions';
+import { findOrCreateUser } from '../actions/userActions';
 
 class signupForm extends Component {
     state = {
@@ -21,11 +21,10 @@ class signupForm extends Component {
 
     handleSubmit = e => {
         e.preventDefault()
-        debugger
         // call an action that will dispatch a new object to our reducer
         // Reducer updates our store state
         // At the same time, the action is going to make a POST fetch so that we can persist it to our db
-        this.props.createUser(this.state)
+        this.props.findOrCreateUser(this.state)
     }
 
     render() {
@@ -44,4 +43,4 @@ class signupForm extends Component {
     }
 }
 
-export default connect(null, { createUser })(signupForm);
+export default connect(null, { findOrCreateUser })(signupForm);
