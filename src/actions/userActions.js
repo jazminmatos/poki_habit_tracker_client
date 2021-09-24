@@ -7,9 +7,9 @@ export const fetchUser = user => {
             // Check if user exists in JSON object
             const foundUser = json.find(obj => obj.name === user.name)
             // if user exists in backend
-            if (foundUser) {
-                console.log("hooray, we found them")
-                dispatch({ type: 'FETCH_USER', payload: user})
+            if (foundUser !== undefined) {
+                // console.log("hooray, we found them")
+                dispatch({ type: 'FETCH_USER', payload: foundUser})
             } else {
                 console.log("send a POST fetch request")
                 createUser(user)
@@ -27,8 +27,6 @@ export const createUser = user => {
     }
 
     return dispatch => {
-        console.log("inside createUser dispatch method")
-
         fetch('http://localhost:3000/users', configObj)
         .then(resp => resp.json())
         .then(user => dispatch({ type: 'CREATE_USER', payload: user}))
