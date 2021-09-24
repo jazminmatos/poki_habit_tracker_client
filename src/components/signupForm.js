@@ -8,8 +8,6 @@ class signupForm extends Component {
         name: ''
     }
 
-    // Moved componentDidMount to SignupContainer
-
     handleChange = e => {
         // console.log(this.state)
         const { name, value } = e.target
@@ -18,19 +16,21 @@ class signupForm extends Component {
             [name]: value
         })        
     }
-
+    
+    // call an action that will dispatch a new object to our reducer
+    // Reducer updates our store state
+    // At the same time, the action is going to make a POST fetch so that we can persist it to our db
     handleSubmit = e => {
         e.preventDefault()
-        // call an action that will dispatch a new object to our reducer
-        // Reducer updates our store state
-        // At the same time, the action is going to make a POST fetch so that we can persist it to our db
         this.props.findOrCreateUser(this.state)
+
         this.setState({
             name: ''
         })
-        // debugger
-        // window.history.pushState('/profile', 'new state', '/profile')
-        // window.history.forward()
+
+        this.props.history.push('/profile')
+
+        console.log("history", this.props.history)
     }
 
     render() {
