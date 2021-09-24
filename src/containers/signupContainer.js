@@ -1,14 +1,17 @@
-import React from 'react';
+import React, { Component } from 'react';
+
 import SignupForm from '../components/SignupForm';
 
-const SignupContainer = () => {
-    return (
-        <div>
-            Hello from Sign Up Container
-            <SignupForm />
-        </div>
-    );
+class signupContainer extends Component {
+    render() {
+        return (
+            <div>
+                <SignupForm />
+            </div>
+        );
+    }
 }
 
-export default SignupContainer;
+export default signupContainer;
+
 
