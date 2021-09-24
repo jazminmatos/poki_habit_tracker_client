@@ -25,7 +25,11 @@ class signupForm extends Component {
         // call an action that will dispatch a new object to our reducer
         // Reducer updates our store state
         // At the same time, the action is going to make a POST fetch so that we can persist it to our db
-        this.props.fetchUser(this.state)
+
+        // If the name in this.state matches one of the names in this.props.users
+        // fetch the user
+            this.props.fetchUser(this.state)
+        // if not, create the user
     }
 
     render() {
