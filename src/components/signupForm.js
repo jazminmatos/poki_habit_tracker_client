@@ -17,7 +17,10 @@ class signupForm extends Component {
     }
 
     handleSubmit = () => {
-        
+        // call an action that will dispatch a new object to our reducer
+        // Reducer updates our store state
+        // At the same time, the action is going to make a POST fetch so that we can persist it to our db
+
     }
 
     render() {
