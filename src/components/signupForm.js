@@ -1,12 +1,11 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 
-import { createUser } from '../actions/userActions';
+import { findOrCreateUser } from '../actions/userActions';
 
 class signupForm extends Component {
     state = {
-        name: '',
-        pokemon: ''
+        name: ''
     }
     // Can move state to signupContainer???
 
@@ -24,7 +23,7 @@ class signupForm extends Component {
         // call an action that will dispatch a new object to our reducer
         // Reducer updates our store state
         // At the same time, the action is going to make a POST fetch so that we can persist it to our db
-        this.props.createUser(this.state)
+        this.props.findOrCreateUser(this.state)
     }
 
     render() {
@@ -36,15 +35,11 @@ class signupForm extends Component {
                     <br />
                     <input type='text' value={this.state.name} onChange={this.handleChange} name="name"/>
                     <br /><br />
-                    <label>Choose your starter Pokemon:</label>
-                    <br />
-                    <input type='text' value={this.state.pokemon} onChange={this.handleChange} name="pokemon"/>
-                    <br /><br />
-                    <input type='submit' value="Sign Up"/>
+                    <input type='submit' value="Log In or Sign Up"/>
                 </form>
             </div>
         );
     }
 }
 
-export default connect(null, { createUser })(signupForm);
+export default connect(null, { findOrCreateUser })(signupForm);
