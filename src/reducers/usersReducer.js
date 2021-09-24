@@ -5,7 +5,7 @@ export const usersReducer = (state = [], action) => {
             console.log("inside fetch_user reducer", action.payload)
             return action.payload
         case 'CREATE_USER':
-            debugger
+            // debugger
             console.log("inside create_user reducer", action.payload)
             return action.payload
         default: 
