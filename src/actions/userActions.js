@@ -10,10 +10,13 @@ export const fetchUser = user => {
             if (foundUser !== undefined) {
                 // console.log("hooray, we found them")
                 dispatch({ type: 'FETCH_USER', payload: foundUser})
-            } else {
-                console.log("send a POST fetch request")
-                createUser(user)
-            }
+            } // else {
+            //     console.log("send a POST fetch request")
+            //     createUser(user)
+            // }
+        })
+        .catch((error) => {
+            console.error('Error:', error)
         })
     }
 }
@@ -30,5 +33,8 @@ export const createUser = user => {
         fetch('http://localhost:3000/users', configObj)
         .then(resp => resp.json())
         .then(user => dispatch({ type: 'CREATE_USER', payload: user}))
+        .catch((error) => {
+            console.error('Error:', error)
+        })
     }
 }
