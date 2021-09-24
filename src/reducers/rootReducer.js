@@ -1,7 +1,10 @@
-import React from 'react';
+import { combineReducers } from 'redux';
 
-const rootReducer = (state, action) => {
-    return {}
-}
+import { usersReducer } from './usersReducer';
+
+// create keys inside of store that will return value of state, set by the individual reducers
+export const rootReducer = combineReducers({
+    users: usersReducer
+})
 
 export default rootReducer;
