@@ -7,13 +7,8 @@ class signupForm extends Component {
     state = {
         name: ''
     }
-    // Can move state to signupContainer???
 
-    componentDidMount () {
-        fetch('http://localhost:3000/users')
-        .then(resp => resp.json())
-        .then(users => console.log("fetchFromMount", users))
-    }
+    // Moved componentDidMount to SignupContainer
 
     handleChange = e => {
         // console.log(this.state)
