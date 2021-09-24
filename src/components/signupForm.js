@@ -1,13 +1,19 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 
-import { fetchUser } from '../actions/userActions';
+import { fetchUser, createUser } from '../actions/userActions';
 
 class signupForm extends Component {
     state = {
         name: ''
     }
     // Can move state to signupContainer???
+
+    componentDidMount () {
+        fetch('http://localhost:3000/users')
+        .then(resp => resp.json())
+        .then(users => console.log("fetchFromMount", users))
+    }
 
     handleChange = e => {
         // console.log(this.state)
@@ -42,4 +48,4 @@ class signupForm extends Component {
     }
 }
 
-export default connect(null, { fetchUser })(signupForm);
+export default connect(null, { fetchUser, createUser })(signupForm);

@@ -1,3 +1,4 @@
+// default state is set equal to array instead of object to avoid nesting
 export const usersReducer = (state = [], action) => {
     switch(action.type) {
         case 'FETCH_USER':
