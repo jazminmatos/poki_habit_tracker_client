@@ -6,7 +6,6 @@ class SignupContainer extends Component {
     render() {
         return (
             <div>
-            debugger
                 <SignupForm />
             </div>
         );

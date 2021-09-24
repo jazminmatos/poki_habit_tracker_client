@@ -12,7 +12,7 @@ const Router = () => {
         <>
             <NavBar />
             <Switch>
-                <Route exact path='/' component={Home} />
+                <Route exact path='/' component={Home}>{this.props}</Route>
                 <Route exact path='/about' component={About} />
                 <Route exact path='/profile' component={Profile} />
                 <Route exact path='/store' component={Store} />

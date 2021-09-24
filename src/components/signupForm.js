@@ -25,6 +25,12 @@ class signupForm extends Component {
         // Reducer updates our store state
         // At the same time, the action is going to make a POST fetch so that we can persist it to our db
         this.props.findOrCreateUser(this.state)
+        this.setState({
+            name: ''
+        })
+        // debugger
+        // window.history.pushState('/profile', 'new state', '/profile')
+        // window.history.forward()
     }
 
     render() {

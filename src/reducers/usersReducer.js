@@ -4,7 +4,6 @@ export const usersReducer = (state = [], action) => {
         case 'FIND_OR_CREATE_USER':
             console.log("inside FIND_OR_CREATE_USER reducer", action.payload)
             return [...state, action.payload]
-            // debugger
         default: 
             return state
     }
