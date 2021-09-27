@@ -34,3 +34,4 @@ export default connect(mapStateToProps)(ProfileContainer);
 
 // How do I get access to the above?
 // Redux via store via connect via mapStateToProps & mapDispatchToProps 
+// Need to pass in props as an argument b/c it's a functional component
