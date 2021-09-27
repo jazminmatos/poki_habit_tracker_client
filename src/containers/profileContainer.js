@@ -2,24 +2,19 @@ import React from 'react';
 import { connect } from 'react-redux';
 
 import Pokemon from '../components/Pokemon';
-// import HealthXpContainer from './HealthXpContainer';
+import HealthXpContainer from './HealthXpContainer';
 
 const ProfileContainer = (props) => {
     console.log("inside ProfileContainer:", props.users)
-    // ADD LOGIC THAT SAYS THAT USER IS THE ONE WHOSE isLoggedIn ATTRIBUTE IS TRUE
-    // const user = props.users.filter((u) => u.isLoggedIn)
-    // debugger
-    // Once isLoggedIn attribute is updated, add the following below:
-    // Hello {user.name}
+
     const user = props.users[props.users.length - 1]
-    
+    debugger
     return (
         <div>
             <br />
             Hello {user.name}! Welcome to your profile.
-            I don't understand
-            <Pokemon />
-            {/* <HealthXpContainer healthAmount={props} xpAmount={} coinAmount={}/> */}
+            <Pokemon name={user.pokemons[0].name} image={user.pokemons[0].image_url}/>
+            <HealthXpContainer healthAmount={user.pokemons[0].health} xpAmount={user.pokemons[0].xp} coinAmount={user.coins}/>
         </div>
     );
 }
@@ -39,3 +34,9 @@ export default connect(mapStateToProps)(ProfileContainer);
 // How do I get access to the above?
 // Redux via store via connect via mapStateToProps & mapDispatchToProps 
 // Need to pass in props as an argument b/c it's a functional component
+
+// ADD LOGIC THAT SAYS THAT USER IS THE ONE WHOSE isLoggedIn ATTRIBUTE IS TRUE
+    // const user = props.users.filter((u) => u.isLoggedIn)
+    // debugger
+    // Once isLoggedIn attribute is updated, add the following below:
+    // Hello {user.name}
