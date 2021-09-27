@@ -1,5 +1,4 @@
 export const CreateUser = user => {
-    debugger
     const configObj = {
         method: 'POST',
         headers: { 'Content-Type': 'application/json'},
@@ -15,11 +14,12 @@ export const CreateUser = user => {
 }
 
 export const fetchUser = user => {
-    debugger
     return dispatch => {
         fetch('http://localhost:3000/users')
         .then(r => r.json())
-        .then(users => dispatch({ type: 'FETCH_USER', payload: users.filter(u => u.name === user.name)}))
+        .then(users => {
+            dispatch({ type: 'FETCH_USER', payload: users.find(u => u.name === user.name)})
+        })
         .catch((error) => {console.error('Error:', error)})
     }
 }

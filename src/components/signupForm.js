@@ -23,7 +23,7 @@ class signupForm extends Component {
     handleNewSubmit = e => {
         console.log("inside handleNewSubmit", this.state)
         e.preventDefault()
-
+        
         this.props.CreateUser(this.state)
         
         this.setState({

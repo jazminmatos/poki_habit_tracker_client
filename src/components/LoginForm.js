@@ -21,9 +21,11 @@ class LoginForm extends Component {
         e.preventDefault()
 
         this.props.fetchUser(this.state)
+        
         this.setState({
             name: ''
         })
+
         this.props.history.push('/profile')
     }
     

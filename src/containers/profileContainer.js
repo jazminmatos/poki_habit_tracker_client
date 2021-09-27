@@ -8,15 +8,15 @@ const ProfileContainer = (props) => {
     console.log("inside ProfileContainer:", props.users)
     // ADD LOGIC THAT SAYS THAT USER IS THE ONE WHOSE isLoggedIn ATTRIBUTE IS TRUE
     // const user = props.users.filter((u) => u.isLoggedIn)
-    debugger
+    // debugger
     // Once isLoggedIn attribute is updated, add the following below:
     // Hello {user.name}
-    // const user = props.users[props.users.length - 1]
-
+    const user = props.users[props.users.length - 1]
+    
     return (
         <div>
             <br />
-            {/* Hello {user.name}! Welcome to your profile. */}
+            Hello {user.name}! Welcome to your profile.
             I don't understand
             <Pokemon />
             {/* <HealthXpContainer healthAmount={props} xpAmount={} coinAmount={}/> */}
