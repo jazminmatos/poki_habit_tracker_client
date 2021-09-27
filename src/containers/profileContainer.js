@@ -2,7 +2,7 @@ import React from 'react';
 import { connect } from 'react-redux';
 
 import Pokemon from '../components/Pokemon';
-import HealthXpContainer from './HealthXpContainer';
+// import HealthXpContainer from './HealthXpContainer';
 
 const ProfileContainer = (props) => {
     console.log("inside ProfileContainer:", props.users)
@@ -11,14 +11,13 @@ const ProfileContainer = (props) => {
     debugger
     // Once isLoggedIn attribute is updated, add the following below:
     // Hello {user.name}
-    const user = props.users[props.users.length - 1]
+    // const user = props.users[props.users.length - 1]
 
     return (
         <div>
             <br />
-            Hello {user.name}! Welcome to your profile.
-
-            
+            {/* Hello {user.name}! Welcome to your profile. */}
+            I don't understand
             <Pokemon />
             {/* <HealthXpContainer healthAmount={props} xpAmount={} coinAmount={}/> */}
         </div>

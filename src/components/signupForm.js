@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 
-import { findOrCreateUser } from '../actions/userActions';
+import { CreateUser } from '../actions/userActions';
 
 class signupForm extends Component {
     state = {
@@ -24,7 +24,7 @@ class signupForm extends Component {
         console.log("inside handleNewSubmit", this.state)
         e.preventDefault()
 
-        this.props.findOrCreateUser(this.state)
+        this.props.CreateUser(this.state)
         
         this.setState({
             name: ''
@@ -53,4 +53,4 @@ class signupForm extends Component {
 }
 
 
-export default connect(null, { findOrCreateUser })(signupForm);
+export default connect(null, { CreateUser })(signupForm);

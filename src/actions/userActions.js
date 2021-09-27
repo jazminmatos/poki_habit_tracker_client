@@ -1,4 +1,5 @@
-export const findOrCreateUser = user => {
+export const CreateUser = user => {
+    debugger
     const configObj = {
         method: 'POST',
         headers: { 'Content-Type': 'application/json'},
