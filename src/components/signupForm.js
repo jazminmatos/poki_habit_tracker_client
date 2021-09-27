@@ -43,13 +43,15 @@ class signupForm extends Component {
     render() {
         return (
             <div>
+                <br />
+                Check out a profile or create your own:
                 <form onSubmit={this.handleSubmit}>
                     <br />
                     <label>Name:</label>
                     <br />
                     <input type='text' value={this.state.name} onChange={this.handleChange} name="name"/>
                     <br /><br />
-                    <input type='submit' value="Log In or Sign Up"/>
+                    <input type='submit' value="Submit"/>
                 </form>
             </div>
         );

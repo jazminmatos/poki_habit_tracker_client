@@ -13,7 +13,10 @@ const ProfileContainer = (props) => {
     // Hello {user.name}
     return (
         <div>
-            Hello Profile Container 
+            <br />
+            Hello {props.users[props.users.length - 1].name}! Welcome to your profile.
+
+            
             <Pokemon />
             <HealthXpContainer />
         </div>
