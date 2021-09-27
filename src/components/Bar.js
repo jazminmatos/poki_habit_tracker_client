@@ -3,7 +3,7 @@ import React from 'react';
 const Bar = (props) => {
     return (
         <div>
-            {props.name}
+            {props.amount}
         </div>
     );
 }

@@ -8,7 +8,6 @@ const ProfileContainer = (props) => {
     console.log("inside ProfileContainer:", props.users)
 
     const user = props.users[props.users.length - 1]
-    debugger
     return (
         <div>
             <br />
