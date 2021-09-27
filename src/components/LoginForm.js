@@ -26,7 +26,7 @@ class LoginForm extends Component {
             name: ''
         })
 
-        this.props.history.push('/profile')
+        // this.props.history.push('/profile')
     }
     
     render() {

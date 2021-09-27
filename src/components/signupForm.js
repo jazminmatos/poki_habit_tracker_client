@@ -30,7 +30,7 @@ class signupForm extends Component {
             name: ''
         })
         
-        this.props.history.push('/profile')
+        // this.props.history.push('/profile')
         console.log("history", this.props.history)
     }
 
