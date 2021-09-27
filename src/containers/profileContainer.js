@@ -11,14 +11,16 @@ const ProfileContainer = (props) => {
 
     // Once isLoggedIn attribute is updated, add the following below:
     // Hello {user.name}
+    const user = props.users[props.users.length - 1]
+
     return (
         <div>
             <br />
-            Hello {props.users[props.users.length - 1].name}! Welcome to your profile.
+            Hello {user.name}! Welcome to your profile.
 
             
             <Pokemon />
-            <HealthXpContainer />
+            {/* <HealthXpContainer healthAmount={props} xpAmount={} coinAmount={}/> */}
         </div>
     );
 }

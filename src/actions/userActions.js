@@ -12,3 +12,15 @@ export const findOrCreateUser = user => {
         .catch((error) => {console.error('Error:', error)})
     }
 }
+
+export const fetchUser = user => {
+    debugger
+    return dispatch => {
+        fetch('http://localhost:3000/users')
+        .then(r => r.json())
+        .then(users => dispatch({ type: 'FETCH_USER', payload: users.filter(u => u.name === user.name)}))
+        .catch((error) => {console.error('Error:', error)})
+    }
+}
+
+// .filter(u => u.name = user.name)
