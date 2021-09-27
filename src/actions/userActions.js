@@ -22,5 +22,3 @@ export const fetchUser = user => {
         .catch((error) => {console.error('Error:', error)})
     }
 }
-
-// .filter(u => u.name = user.name)

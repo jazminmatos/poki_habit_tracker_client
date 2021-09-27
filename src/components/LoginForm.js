@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 
-import { findOrCreateUser } from '../actions/userActions';
+import { fetchUser } from '../actions/userActions'
 
-class signupForm extends Component {
+class LoginForm extends Component {
     state = {
         name: ''
     }
@@ -15,31 +15,24 @@ class signupForm extends Component {
             [name]: value
         })        
     }
-    
-    // call an action that will dispatch a new object to our reducer
-    // Reducer updates our store state
-    // At the same time, the action is going to make a POST fetch so that we can persist it to our db
-    
-    handleNewSubmit = e => {
-        console.log("inside handleNewSubmit", this.state)
+
+    handleSubmit = e => {
+        console.log("inside handleExistingSubmit", this.state)
         e.preventDefault()
 
-        this.props.findOrCreateUser(this.state)
-        
+        this.props.fetchUser(this.state)
         this.setState({
             name: ''
         })
-        
         this.props.history.push('/profile')
-        console.log("history", this.props.history)
     }
-
+    
     render() {
         return (
             <div>
-                <br />
-                Create a new profile:
-                <form onSubmit={this.handleNewSubmit}>
+                <br /> <br />
+                Go to an existing profile:
+                <form onSubmit={this.handleSubmit}>
                     <br />
                     <label>Name:</label>
                     <br />
@@ -52,5 +45,4 @@ class signupForm extends Component {
     }
 }
 
-
-export default connect(null, { findOrCreateUser })(signupForm);
+export default connect(null, { fetchUser })(LoginForm);

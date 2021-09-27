@@ -1,11 +1,11 @@
 import React from 'react';
 
-import SignupContainer from '../containers/SignupContainer';
+import AuthorizationContainer from '../containers/AuthorizationContainer';
 
 const Home = () => {
     return (
         <div>
-            <SignupContainer />
+            <AuthorizationContainer />
         </div>
     );
 }

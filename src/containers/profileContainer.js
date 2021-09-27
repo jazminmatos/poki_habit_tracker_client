@@ -8,7 +8,7 @@ const ProfileContainer = (props) => {
     console.log("inside ProfileContainer:", props.users)
     // ADD LOGIC THAT SAYS THAT USER IS THE ONE WHOSE isLoggedIn ATTRIBUTE IS TRUE
     // const user = props.users.filter((u) => u.isLoggedIn)
-
+    debugger
     // Once isLoggedIn attribute is updated, add the following below:
     // Hello {user.name}
     const user = props.users[props.users.length - 1]
