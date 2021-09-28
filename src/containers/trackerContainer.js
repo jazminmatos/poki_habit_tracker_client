@@ -10,8 +10,8 @@ const TrackerContainer = (props) => {
 
     return (
         <div>
-            <DailyContainer task={dailyTasks}/>
-            <TodoContainer task={todoTasks}/>
+            <DailyContainer tasks={dailyTasks}/>
+            <TodoContainer tasks={todoTasks}/>
         </div>
     );
 }
