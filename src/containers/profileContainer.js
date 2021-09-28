@@ -13,6 +13,7 @@ const ProfileContainer = (props) => {
     const user = props.users
     // console.log("user:", user)
     debugger
+    
     // NEED TO ADD IF/ELSE FOR WHEN A USER DOESN'T HAVE POKEMON
     return (
         <div>

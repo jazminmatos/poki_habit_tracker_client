@@ -5,7 +5,6 @@ import ProfileContainer from '../containers/ProfileContainer';
 const Profile = () => {
     return (
         <div>
-            Hello from Profile Page
             <ProfileContainer />
         </div>
     );
