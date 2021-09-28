@@ -29,7 +29,7 @@ const ProfileContainer = (props) => {
             <br />
             {user.tasks.length < 0 ? "You have no tasks yet..." : (
                 <div>
-                    <TrackerContainer />
+                    <TrackerContainer tasks={user.tasks}/>
                 </div>
             )}
         </div>
