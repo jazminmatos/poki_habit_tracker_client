@@ -4,6 +4,7 @@ import { connect } from 'react-redux';
 import Pokemon from '../components/Pokemon';
 import HealthXpContainer from './HealthXpContainer';
 import TrackerContainer from './TrackerContainer'
+import '../css/ProfileContainer.css'
 
 
 // use isloading state to determine whether or not to render profile page 
@@ -13,14 +14,13 @@ const ProfileContainer = (props) => {
     const user = props.users
     // console.log("user:", user)
     debugger
-    
     // NEED TO ADD IF/ELSE FOR WHEN A USER DOESN'T HAVE POKEMON
     return (
         <div>
             <br />
             {props.loading ? "LOADING..." : (
-                <div> 
-                    Hello {user.name}! Welcome to your profile.
+                <div className="proContainer"> 
+                    <p>Hello {user.name}! Welcome to your profile.</p>
                     <Pokemon name={user.pokemons[0].name} image={user.pokemons[0].image_url}/>
                     <HealthXpContainer healthAmount={user.pokemons[0].health} xpAmount={user.pokemons[0].xp} coinAmount={user.coins}/>
                 </div>
