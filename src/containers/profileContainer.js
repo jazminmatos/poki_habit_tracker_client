@@ -3,6 +3,7 @@ import { connect } from 'react-redux';
 
 import Pokemon from '../components/Pokemon';
 import HealthXpContainer from './HealthXpContainer';
+import TrackerContainer from './TrackerContainer'
 
 
 // use isloading state to determine whether or not to render profile page 
@@ -11,7 +12,7 @@ const ProfileContainer = (props) => {
     // console.log("props:", props)
     const user = props.users
     // console.log("user:", user)
-    // debugger
+    debugger
     // NEED TO ADD IF/ELSE FOR WHEN A USER DOESN'T HAVE POKEMON
     return (
         <div>
@@ -25,7 +26,12 @@ const ProfileContainer = (props) => {
             )
             }
             __________________________________________
-            
+            <br />
+            {user.tasks.length < 0 ? "You have no tasks yet..." : (
+                <div>
+                    <TrackerContainer />
+                </div>
+            )}
         </div>
     );
 }
