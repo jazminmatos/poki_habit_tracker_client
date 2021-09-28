@@ -5,7 +5,8 @@ import { fetchUser } from '../actions/userActions'
 
 class LoginForm extends Component {
     state = {
-        name: ''
+        name: '',
+        isLoading: true
     }
 
     handleChange = e => {
@@ -17,16 +18,16 @@ class LoginForm extends Component {
     }
 
     handleSubmit = e => {
-        console.log("inside handleExistingSubmit", this.state)
+        console.log("inside handleExistingSubmit", this.state.name)
         e.preventDefault()
-
-        this.props.fetchUser(this.state)
+        //debugger
+        this.props.fetchUser(this.state.name)
         
         this.setState({
             name: ''
         })
 
-        // this.props.history.push('/profile')
+        this.props.history.push('/profile')
     }
     
     render() {

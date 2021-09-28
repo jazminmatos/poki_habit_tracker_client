@@ -10,15 +10,11 @@ class signupForm extends Component {
 
     handleChange = e => {
         const { name, value } = e.target
-
+        
         this.setState({
             [name]: value
         })        
     }
-    
-    // call an action that will dispatch a new object to our reducer
-    // Reducer updates our store state
-    // At the same time, the action is going to make a POST fetch so that we can persist it to our db
     
     handleNewSubmit = e => {
         console.log("inside handleNewSubmit", this.state)
@@ -30,7 +26,7 @@ class signupForm extends Component {
             name: ''
         })
         
-        // this.props.history.push('/profile')
+        this.props.history.push('/profile')
         console.log("history", this.props.history)
     }
 

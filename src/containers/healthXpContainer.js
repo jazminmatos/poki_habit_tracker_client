@@ -6,10 +6,10 @@ import Coin from '../components/Coin';
 const HealthXpContainer = (props) => {
     return (
         <div>
-            Hello from HealthXpContainer
-            
-            <Bar amount={props.healthAmount}/>
-            <Bar amount={props.xpAmount}/>
+            Health: <Bar amount={props.healthAmount}/>
+            <br />
+            Experience: <Bar amount={props.xpAmount}/>
+            <br />
             <Coin amount={props.coinAmount}/>
         </div>
     );

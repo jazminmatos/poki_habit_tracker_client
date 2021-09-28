@@ -4,23 +4,36 @@ import { connect } from 'react-redux';
 import Pokemon from '../components/Pokemon';
 import HealthXpContainer from './HealthXpContainer';
 
-const ProfileContainer = (props) => {
-    console.log("inside ProfileContainer:", props.users)
 
-    const user = props.users[props.users.length - 1]
+// use isloading state to determine whether or not to render profile page 
+const ProfileContainer = (props) => {
+    // console.log("inside ProfileContainer:", props.users)
+    // console.log("props:", props)
+    const user = props.users
+    // console.log("user:", user)
+    // debugger
+    // NEED TO ADD IF/ELSE FOR WHEN A USER DOESN'T HAVE POKEMON
     return (
         <div>
             <br />
-            Hello {user.name}! Welcome to your profile.
-            <Pokemon name={user.pokemons[0].name} image={user.pokemons[0].image_url}/>
-            <HealthXpContainer healthAmount={user.pokemons[0].health} xpAmount={user.pokemons[0].xp} coinAmount={user.coins}/>
+            {props.loading ? "LOADING..." : (
+                <div> 
+                    Hello {user.name}! Welcome to your profile.
+                    <Pokemon name={user.pokemons[0].name} image={user.pokemons[0].image_url}/>
+                    <HealthXpContainer healthAmount={user.pokemons[0].health} xpAmount={user.pokemons[0].xp} coinAmount={user.coins}/>
+                </div>
+            )
+            }
+            __________________________________________
+            
         </div>
     );
 }
 
 const mapStateToProps = state => {
     return {
-        users: state.users
+        users: state.users.users,
+        loading: state.users.loading
     }
 }
 
